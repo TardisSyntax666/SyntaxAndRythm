@@ -50,5 +50,9 @@ async def reload(ctx, cog_name=None):
         bot.reload_extension(f"{cog_name}")
         await ctx.channel.send(f"Reloaded **{cog_name}**")
 
-
-bot.run('ODQ3NzQxNTE0MTEyNjk2MzIw.YLCezw.CinBP9-KtuuXNqrOwQfUSWiBNvk')
+tokentxt = open("C:/Users/Michael/Desktop/token.txt", 'r')
+token = None
+for line in tokentxt:
+    token = line.strip()
+tokentxt.close()
+bot.run(token)
