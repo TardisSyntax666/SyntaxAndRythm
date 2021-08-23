@@ -12,7 +12,7 @@ for cog in cogs:
 @bot.event
 async def on_ready():
     print("--ONLINE--")
-    await bot.change_presence(activity=discord.Game("Version 0.1.0"))
+    await bot.change_presence(activity=discord.Game("Version 0.2.0"))
 
 
 @bot.command()
