@@ -9,7 +9,7 @@ def fetch_server_database(guild_id):
     # returns a sqlite3 connection object
 
     databases = os.listdir(dir_path)
-    database_name = "accounts_" + str(guild_id) + ".db"
+    database_name = "settings_" + str(guild_id) + ".db"
     if database_name in databases:
         conn = sqlite3.connect(dir_path + database_name)
         return conn
@@ -17,13 +17,20 @@ def fetch_server_database(guild_id):
         conn = sqlite3.connect(dir_path + database_name)
         c = conn.cursor()
         c.execute("""CREATE TABLE guild_accounts (
-                    guild_id text,
-                    member_id text,
-                    m_balance text,
-                    g_balance text,
-                    b_balance text,
-                    steal_risk text,
-                    knife text
+                    les text,
+                    gay text,
+                    bi text,
+                    sus text,
+                    connect text,
+                    play text,
+                    pause text,
+                    resume text,
+                    skip text,
+                    queue text,
+                    now_playing text,
+                    volume text,
+                    stop text
+                    
                 )""")
         conn.commit()
         return conn

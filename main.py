@@ -4,7 +4,7 @@ from discord.ext import commands
 intents = discord.Intents(members=True, guilds=True, emojis=True, voice_states=True, presences=True, messages=True,
                           guild_messages=True, dm_messages=True, reactions=True, guild_reactions=True)
 bot = commands.Bot(command_prefix='&', description="Syntax and Rhythm, Precision and Harmony")
-cogs = ['Default', 'Logs', 'Music', 'ImageCommands', 'Top']
+cogs = ['Default', 'Logs','Music' , 'ImageCommands', 'Sniper']
 for cog in cogs:
     bot.load_extension(f"{cog}")
 
@@ -49,6 +49,7 @@ async def reload(ctx, cog_name=None):
     else:
         bot.reload_extension(f"{cog_name}")
         await ctx.channel.send(f"Reloaded **{cog_name}**")
+
 
 tokentxt = open("C:/Users/Michael/Desktop/token.txt", 'r')
 token = None
