@@ -1,10 +1,11 @@
 import discord
 from discord.ext import commands
 
-intents = discord.Intents(members=True, guilds=True, emojis=True, voice_states=True, presences=True, messages=True,
-                          guild_messages=True, dm_messages=True, reactions=True, guild_reactions=True)
-bot = commands.Bot(command_prefix='&', description="Syntax and Rhythm, Precision and Harmony")
-cogs = ['Default', 'Logs','Music' , 'ImageCommands', 'Sniper']
+
+intents1 = discord.Intents(members=True, guilds=True, emojis=True, voice_states=True, presences=True, messages=True,
+                           guild_messages=True, dm_messages=True, reactions=True, guild_reactions=True)
+bot = commands.Bot(command_prefix='&', description="Syntax and Rhythm, Precision and Harmony", intents=intents1)
+cogs = ['Default', 'Logs', 'Music', 'ImageCommands', 'Prototype', 'AutoChannel']
 for cog in cogs:
     bot.load_extension(f"{cog}")
 
@@ -12,7 +13,7 @@ for cog in cogs:
 @bot.event
 async def on_ready():
     print("--ONLINE--")
-    await bot.change_presence(activity=discord.Game("Version 0.2.0"))
+    await bot.change_presence(activity=discord.Game("Version 1.38.0"))
 
 
 @bot.command()
